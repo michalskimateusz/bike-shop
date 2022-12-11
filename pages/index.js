@@ -1,7 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import { HeroBanner, Product, FooterBanner } from "../components"
-export default function Home() {
+import { client } from "../lib/client";
+import heroBanner from "../components/HeroBanner";
+export default function Home({products, bannerData}) {
+
   return (
     <>
       <Head>
@@ -9,7 +12,7 @@ export default function Home() {
         <meta name="description" content="Bike Shop for everyone" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeroBanner/>
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
 
       <main>
         <div className="products-heading">
@@ -20,10 +23,24 @@ export default function Home() {
         </div>
 
         <div className="products-container">
-          {['Product 1', 'Product 2'].map((product) => ( product))}
+          {products?.map((product) => ( product.name))}
         </div>
       </main>
       <FooterBanner/>
     </>
   );
+}
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query)
+  const bannerQuery = '*[_type == "banner"]';
+  const bannerData = await client.fetch(bannerQuery)
+
+  return {
+    props: {
+      products, bannerData
+    }
+  }
+
 }
