@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import toast from "react-hot-toast";
 
-const Contex = createContext();
+const Context = createContext();
 
 export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
@@ -86,13 +86,16 @@ export const StateContext = ({ children }) => {
   };
 
   return (
-    <Contex.Provider
+    <Context.Provider
       value={{
         showCart,
         setShowCart,
         cartItems,
+        setCartItems,
         totalPrice,
+        setTotalPrice,
         totalQuantities,
+        setTotalQuantities,
         qty,
         incQty,
         decQty,
@@ -102,8 +105,8 @@ export const StateContext = ({ children }) => {
       }}
     >
       {children}
-    </Contex.Provider>
+    </Context.Provider>
   );
 };
 
-export const useStateContext = () => useContext(Contex);
+export const useStateContext = () => useContext(Context);
