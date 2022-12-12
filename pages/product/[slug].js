@@ -44,7 +44,7 @@ const ProductDetails = ({ product, products }) => {
                 }
                 width={150}
                 height={150}
-                onMouseEnter={() => setIndex(i)}
+                onClick={() => setIndex(i)}
               />
             ))}
           </div>
