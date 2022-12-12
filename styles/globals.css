@@ -248,12 +248,10 @@ span.text-red {
 }
 .footer-banner-image{
   position: absolute;
-  /* top: -35%;
-  left: 8%; */
-  top: -25%;
+  top: 10%;
   left: 25%;
   width: auto;
-  height: 90%;
+  height: 80%;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -275,14 +273,14 @@ span.text-red {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index:100;
   /* will-change: transform; */
   transition: all 1s ease-in-out;
 
 }
 .cart-container{
   height: 100vh;
-  width: 600px;
+  width: 635px;
   background-color: white;
   float: right;
   padding: 40px 10px;
@@ -350,10 +348,11 @@ span.text-red {
   padding: 20px;
 }
 .product .cart-product-image{
+  object-fit: contain;
   width:180px ;
   height: 150px;
   border-radius: 15px;
-  background-color: #ebebeb;
+  background-color: #f3f0f1;
 }
 .item-desc .flex{
   display: flex;
@@ -439,8 +438,9 @@ span.text-red {
 
 .small-images-container{
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
   margin-top: 20px;
+  width: 100%;
 }
 .small-image{
   border-radius: 8px;
