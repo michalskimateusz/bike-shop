@@ -10,6 +10,20 @@ const Navbar = () => {
       <p className="logo">
         <Link href="/">Bike Shop</Link>
       </p>
+      <div className="navlinks">
+        <Link className="navlink" href="/">
+          Bikes
+        </Link>
+        <Link className="navlink" href="/">
+          Shoes
+        </Link>
+        <Link className="navlink" href="/">
+          Helmets
+        </Link>
+        <Link className="navlink" href="/">
+          Saddles
+        </Link>
+      </div>
       <button
         type="button"
         className="cart-icon"
