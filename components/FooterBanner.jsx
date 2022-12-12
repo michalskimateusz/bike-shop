@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const FooterBanner = ({
-  footerBanner: { discount, saleTime, smallText, product, buttonText, desc },
+  footerBanner: { discount, saleTime, smallText, product, buttonText },
 }) => {
   return (
     <div className="footer-banner-container">
@@ -12,7 +12,6 @@ const FooterBanner = ({
           <p>{saleTime}</p>
         </div>
         <div className="right">
-          <p>{desc}</p>
           <Link href={`/product/${product}`}>
             <button type="button">{buttonText}</button>
           </Link>
