@@ -26,7 +26,7 @@ export default function Home({products, bannerData}) {
           {products?.map((product) => ( <Product key={product._id} product={product}/>))}
         </div>
       </main>
-      <FooterBanner/>
+      <FooterBanner footerBanner={bannerData && bannerData[0]}/>
     </>
   );
 }
