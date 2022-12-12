@@ -7,11 +7,7 @@ export default function Home({products, bannerData}) {
 
   return (
     <>
-      <Head>
-        <title>Bike Shop</title>
-        <meta name="description" content="Bike Shop for everyone" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
 
       <main>
